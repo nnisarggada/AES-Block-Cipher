@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Kaizen at Toyota</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section
+            id="matrices-in-cryptography"
+            class="title-slide slide level1"
+          >
+            <h1>Matrices in Cryptography</h1>
+          </section>
+          <section id="introduction" class="slide level2">
+            <h2>Introduction</h2>
+            <ul>
+              <li>
+                Matrices are commonly used in cryptography to encode and encrypt
+                messages.
+              </li>
+              <li>
+                In this presentation, we’ll look at how matrices are used in
+                cryptography, including examples of each type of matrix.
+              </li>
+            </ul>
+          </section>
+          <section id="types-of-matrices" class="slide level2">
+            <h2>Types of Matrices</h2>
+            <p>
+              There are three types of matrices commonly used in cryptography:
+            </p>
+            <ol type="1">
+              <li>Permutation matrices</li>
+              <li>Substitution matrices</li>
+              <li>Mixing matrices</li>
+            </ol>
+          </section>
+          <section id="permutation-matrices" class="slide level2">
+            <h2>1. Permutation Matrices</h2>
+            <ul>
+              <li>
+                A permutation matrix is a square matrix that has exactly one 1
+                in each row and column, with all other elements being 0.
+              </li>
+              <li>
+                In cryptography, permutation matrices are used to shuffle the
+                order of the elements in a message.
+              </li>
+            </ul>
+          </section>
+          <section class="slide level2">
+            <h3 id="example-transposition-cipher">
+              Example: Transposition Cipher
+            </h3>
+            <ul>
+              <li>
+                The Transposition Cipher is a simple example of a cipher that
+                uses permutation matrices.
+              </li>
+              <li>
+                In this cipher, we write the message in rows of a matrix, then
+                read the columns in a new order to produce the ciphertext.
+              </li>
+            </ul>
+          </section>
+          <section class="slide level2">
+            <h4 id="example-encrypting-hello-with-transposition-cipher">
+              Example: Encrypting “Hello” with Transposition Cipher
+            </h4>
+            <ul>
+              <li>We write the message “Hello” in rows of a matrix:</li>
+            </ul>
+            <p>[H][e][l][l][o]</p>
+            <ul>
+              <li>
+                We read the columns in a new order, for example, “2 4 3 1 5”:
+              </li>
+            </ul>
+            <p>[e][l][l][H][o]</p>
+            <ul>
+              <li>The resulting ciphertext is “ellHo”.</li>
+            </ul>
+          </section>
+          <section id="substitution-matrices" class="slide level2">
+            <h2>2. Substitution Matrices</h2>
+            <ul>
+              <li>
+                A substitution matrix is a square matrix where each element is
+                replaced by another element according to a substitution rule.
+              </li>
+              <li>
+                In cryptography, substitution matrices are used to replace each
+                character in a message with another character or symbol.
+              </li>
+            </ul>
+          </section>
+          <section class="slide level2">
+            <h3 id="example-caesar-cipher">Example: Caesar Cipher</h3>
+            <ul>
+              <li>
+                The Caesar Cipher is a simple example of a cipher that uses
+                substitution matrices.
+              </li>
+              <li>
+                In this cipher, we shift each letter in the message by a fixed
+                number of positions in the alphabet.
+              </li>
+            </ul>
+          </section>
+          <section class="slide level2">
+            <h4 id="example-encrypting-hello-with-caesar-cipher">
+              Example: Encrypting “Hello” with Caesar Cipher
+            </h4>
+            <ul>
+              <li>
+                <p>
+                  We shift each letter in the message “Hello” by 3 positions in
+                  the alphabet.
+                </p>
+              </li>
+              <li><p>The resulting ciphertext is “Khoor”.</p></li>
+            </ul>
+          </section>
+          <section id="mixing-matrices" class="slide level2">
+            <h2>3. Mixing Matrices</h2>
+            <ul>
+              <li>
+                A mixing matrix is a square matrix that is used to mix the
+                elements of a message in a non-linear way.
+              </li>
+              <li>
+                In cryptography, mixing matrices are used to add a layer of
+                complexity to the encryption process.
+              </li>
+            </ul>
+          </section>
+          <section class="slide level2">
+            <h3 id="example-advanced-encryption-standard-aes">
+              Example: Advanced Encryption Standard (AES)
+            </h3>
+            <ul>
+              <li>
+                The Advanced Encryption Standard (AES) is a widely-used block
+                cipher that uses mixing matrices to encrypt and decrypt
+                messages.
+              </li>
+              <li>
+                AES operates on fixed-length blocks of plaintext, which are
+                represented as matrices of bytes.
+              </li>
+            </ul>
+          </section>
+          <section class="slide level2">
+            <h4 id="example-encrypting-hello-with-aes">
+              Example: Encrypting “Hello” with AES
+            </h4>
+            <ul>
+              <li>
+                <p>
+                  We use a secret key of “0123456789ABCDEF”, and a block size of
+                  128 bits.
+                </p>
+              </li>
+              <li>
+                <p>
+                  We pad the plaintext message “Hello” with null bytes to create
+                  a 16-byte plaintext block.
+                </p>
+              </li>
+              <li>
+                <p>
+                  We use the AES key expansion algorithm to generate a set of
+                  round keys from the secret key.
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section class="slide level2">
+            <h4 id="example-encrypting-hello-with-aes-1">
+              Example: Encrypting “Hello” with AES
+            </h4>
+            <ul>
+              <li>
+                <p>
+                  We apply a series of matrix operations (SubBytes, ShiftRows,
+                  MixColumns, and AddRoundKey) to the plaintext matrix to
+                  produce the ciphertext matrix.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The resulting ciphertext is a scrambled version of the
+                  plaintext that can only be decrypted with the correct secret
+                  key.
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section id="conclusion" class="slide level2">
+            <h2>Conclusion</h2>
+            <ul>
+              <li>
+                Matrices are a powerful tool in cryptography, enabling us to
+                encode and encrypt messages with a high degree of security.
+              </li>
+              <li>
+                By using different types of matrices with encryption algorithms
+                like the Transposition Cipher, Caesar Cipher, and AES, we can
+                ensure that our messages remain confidential and secure.
+              </li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      })
+    </script>
+  </body>
+</html>
